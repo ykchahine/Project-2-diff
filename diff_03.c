@@ -18,7 +18,7 @@
 #include "util.h"
 
 void version(void) {
-  printf("\n\n\ndiff (CSUF diffutils) 1.0.0\n");
+  printf("\n\n\ndiff (CSUF diffutils) 3.0.0\n");
   printf("Copyright (C) 2020 CSUF\n");
   printf("This program comes with NO WARRANTY, to the extent permitted by law.\n");
   printf("You may redistribute copies of this program\n");
