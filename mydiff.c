@@ -1,5 +1,6 @@
 
-
+//Youssef Chahine
+//CPSC 223-03
 
 #include <stdio.h>
 #include <stdlib.h>
