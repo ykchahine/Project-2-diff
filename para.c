@@ -82,3 +82,20 @@ void para_printfile(char* base[], int count, void (*fp)(const char*)) {
   }
   printline();
 }
+
+int para_almostequal(para* p, para* q, int* lines_equal, int nlines) {
+  if (p == NULL || q == NULL) { return 0; }
+  if (p->start >= p->filesize || q->start >= q->filesize) { return 0; }
+  memset(lines_equal, 1, nlines * sizeof(int));   // SET ALL LINES TO BE EQUAL
+
+  int i = p->start, j = q->start, line = 0, equal = 0, lines_different = 0;
+  while (i < p->stop && j < q->stop){
+    if ((equal = strcmp(p->base[i], q->base[i])) != 0) {
+      lines_equal[line] = 0;
+      ++lines_different;
+    }
+    ++i; ++j; ++line;
+    if (line > nlines) { break; }
+  }
+  return lines_different <= 2;
+}
